@@ -1,0 +1,50 @@
+<h3>Create Customer</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="name">First Name</label>
+      <input type="text" class="form-control" id="firstName" required [(ngModel)]="person.firstName" name="firstName"
+        #firstName="ngModel">
+      <div class="has-error" *ngIf="firstName.touched && !firstName.valid">
+        First Name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Last Name</label>
+      <input type="text" class="form-control" id="lastName" required [(ngModel)]="person.lastName" name="lastName"
+        #lastName="ngModel">
+        <div class="has-error" *ngIf="lastName.touched && !lastName.valid">
+          Last Name is required.
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">ID Number</label>
+      <input type="text" class="form-control" id="idNumber" required [(ngModel)]="person.idNumber" name="idNumber"
+        #idNumber="ngModel">
+        <div class="has-error" *ngIf="idNumber.touched && !idNumber.valid">
+          ID Number is required.
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Phone Number</label>
+      <input type="text" class="form-control" id="phoneNumber" required [(ngModel)]="person.phoneNumber"
+        name="phoneNumber" #phoneNumber="ngModel">
+        <div class="has-error" *ngIf="phoneNumber.touched && !phoneNumber.valid">
+          Phone Number is required.
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Person successfully Added!</h4>
+
+</div>
